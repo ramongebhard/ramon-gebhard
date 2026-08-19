@@ -1,0 +1,15 @@
+_live  —  die fertige Online-Version der Website
+==================================================
+Das ist GENAU das, was online geht: index.html + nur die Bilder,
+die die Seite wirklich braucht. Keine Entwürfe, kein Archiv.
+
+So gehst du live (Cloudflare Pages, Direct Upload):
+  1. dash.cloudflare.com -> Workers & Pages -> Create -> Pages
+  2. "Upload assets" / "Direct Upload" waehlen
+  3. Projektname: ramon-gebhard
+  4. DIESEN Ordner (_live) ins Upload-Feld ziehen
+  5. "Deploy site"
+
+Erstellt/aktualisiert automatisch aus dem Hauptordner. Nichts von Hand
+hier hineinkopieren - bei Aenderungen an index.html sagst du Claude
+Bescheid, dann wird _live neu erzeugt.
