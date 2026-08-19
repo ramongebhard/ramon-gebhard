@@ -572,7 +572,7 @@ body.has-motion .reveal.in-view{opacity:1;transform:none}
     <a href="#ueber">&Uuml;ber mich</a>
     <a href="#netzwerk">Netzwerk</a>
   </nav>
-  <a class="nav-cta" href="#kontakt">Kontakt</a>
+  <a class="nav-cta" href="#anfrage">Kontakt</a>
 </div></header>
 <section class="hero"><div class="wrap hero-inner">
   <div class="hero-text">
@@ -877,7 +877,7 @@ body.has-motion .reveal.in-view{opacity:1;transform:none}
     </div>
     <div class="yl-foot">
       
-      <a class="btn-pill" href="#kontakt">Gespräch vereinbaren &#8594;</a>
+      <a class="btn-pill" href="javascript:void(0)" onclick="goKontakt('s-yl')">Gespräch vereinbaren &#8594;</a>
     </div>
   </div></div></div></div>
 <div class="overlay" id="s-cm" onclick="bg(event,this)"><div class="sheet"><button class="x" onclick="closeSheet('s-cm')">&times;</button><div class="shead"><svg class="sgfx" viewBox="0 0 200 200" aria-hidden="true"><circle cx="66" cy="84" r="34" fill="#15120E"/><circle cx="108" cy="64" r="27" fill="#1FA463" fill-opacity=".92"/><rect x="94" y="102" width="26" height="26" rx="5" transform="rotate(20 107 115)" fill="#15120E" fill-opacity=".5"/></svg><span class="kicker">Change &amp; KI</span><h2>Wandel, der Menschen mitnimmt.</h2><p>Ausgewählte Cases aus Change Management, digitaler und KI-Transformation.</p></div><div class="sbody"><div class="dtabs"><button class="dtab active" onclick="ctab(this,'c-ki')">KI-Transformation</button><button class="dtab" onclick="ctab(this,'c-dig')">Digitale Transformation</button><button class="dtab" onclick="ctab(this,'c-reorg')">Reorganisation</button></div><div class="cpanel active" id="c-ki"><div class="case">
@@ -1010,7 +1010,8 @@ body.has-motion .reveal.in-view{opacity:1;transform:none}
 </div></div>
 <button id="ht-return" class="ht-return" type="button" onclick="openSheet('s-test')">&#8592; Zur&uuml;ck zum Testergebnis</button>
 <script>
-function openSheet(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';if(id==='s-test'){var rb=document.getElementById('ht-return');if(rb)rb.style.display='none';}}
+function openSheet(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';var sh=document.querySelector('#'+id+' .sheet');if(sh)sh.scrollTop=0;if(id==='s-test'){var rb=document.getElementById('ht-return');if(rb)rb.style.display='none';}}
+function goKontakt(sheetId){if(sheetId)closeSheet(sheetId);setTimeout(function(){var a=document.getElementById("anfrage");if(a)a.scrollIntoView({behavior:"smooth"});},350);}
 function closeSheet(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';if(id==='s-test')htReturnBtn();}
 function htReturnBtn(){var rb=document.getElementById('ht-return');if(!rb)return;var r=document.getElementById('ht-result');rb.style.display=(window.HT_LAST&&r&&r.classList.contains('show'))?'inline-flex':'none';}
 function bg(e,el){if(e.target===el)closeSheet(el.id);}
